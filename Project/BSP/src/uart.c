@@ -18,9 +18,11 @@ u16 USART_RX_STA=0;       //接收状态标记
 
 u8 aRxBuffer[RXBUFFERSIZE];//HAL库使用的串口接收缓冲
 
+//////////////////////////////////////////////////////////////////
+//加入以下代码,支持printf函数,而不需要选择use MicroLIB	  
 
-
-//标准库需要的支持函数                 
+#pragma import(__use_no_semihosting)             
+//标准库需要的支持函数                   
 struct __FILE 
 { 
 	int handle; 
@@ -34,7 +36,8 @@ void _sys_exit(int x)
 } 
 
 //重定义fputc函数 
-int fputch(int ch)
+int fputc(int ch, FILE *f)
+
 { 	
 	while((USART1->SR&0X40)==0);//循环发送,直到发送完毕   
 	USART1->DR = (u8) ch;      

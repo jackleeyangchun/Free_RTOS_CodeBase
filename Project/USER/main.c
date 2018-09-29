@@ -21,13 +21,16 @@ int main(void)
 {
 	LED_Init();
 	uart_init();
-	
-	fputch('h');
-	fputch('e');
-	fputch('l');
-	fputch('l');
-	fputch('0');
-		
+
+/*	
+	fputc('h');
+	fputc('e');
+	fputc('l');
+	fputc('l');
+	fputc('0');
+	fputc('\n');
+*/
+	printf("Hello world!\n");
 	
 /*	
 	delay_init();

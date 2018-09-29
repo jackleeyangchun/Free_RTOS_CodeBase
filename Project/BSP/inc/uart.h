@@ -2,7 +2,7 @@
 #define UART_H
 
 #include "stdio.h"
-#include "string.h"
+//#include "string.h"
 //#include "malloc.h"
 
 #include "stm32f10x_gpio.h"
@@ -21,7 +21,8 @@ extern u16 USART_RX_STA;         		//接收状态标记
 extern u8 aRxBuffer[RXBUFFERSIZE];//HAL库USART接收Buffer
 
 void USART1_IRQHandler(void);
-int fputch(int ch);
+int fputc(int ch, FILE *f);
+
 
 
 void uart_init();

@@ -623,6 +623,11 @@
               <FileType>1</FileType>
               <FilePath>..\BSP\delay\delay.c</FilePath>
             </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\src\uart.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
